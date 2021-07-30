@@ -1,0 +1,5 @@
+[user]
+	email = movie-query@program
+	name = movie-query
+
+# git config --local include.path ../.gitconfig
