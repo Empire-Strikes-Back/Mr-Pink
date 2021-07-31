@@ -7,17 +7,6 @@ repl(){
   lein repl :start :host 0.0.0.0 :port 35543
 }
 
-push(){
-  ORIGIN=$(git remote get-url origin)
-  rm -rf .git
-  git init -b main
-  git remote add origin $ORIGIN
-  git config --local include.path ../.gitconfig
-  git add .
-  git commit -m "i am movie-query program"
-  git push -f -u origin main
-}
-
 import_sql(){
     gunzip -c ./.data/aligulac.sql.gz | \
     PGPASSWORD=postgres psql -h postgres -p 5432 -d postgres -U postgres 
